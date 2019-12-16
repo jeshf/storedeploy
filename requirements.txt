@@ -34,7 +34,6 @@ psutil==5.4.2
 psycopg2==2.8.4
 pyOpenSSL==17.5.0
 pyRFC3339==1.0
-python-apt==1.6.4
 python-dateutil==2.6.1
 python-debian==0.1.32
 python-decouple==3.3
