@@ -27,6 +27,7 @@ def searchprod(request):
         form = ContactForm(data=request.POST)
         form.fields['producto'].error_messages = {'required': 'Este campo es requerido'}
         if form.is_valid():
-            results = Product.objects.filter(name=request.POST['producto'])
+            np=request.POST['producto'].lower()
+            results = Product.objects.filter(name=np)
             html = template.render({'results': results, 'form': form}, request)
             return HttpResponse(html)
