@@ -28,6 +28,6 @@ def searchprod(request):
         form.fields['producto'].error_messages = {'required': 'Este campo es requerido'}
         if form.is_valid():
             np=request.POST['producto'].lower()
-            results = Product.objects.filter(name=np)
+            results = Product.objects.filter(name__contains=np)
             html = template.render({'results': results, 'form': form}, request)
             return HttpResponse(html)
